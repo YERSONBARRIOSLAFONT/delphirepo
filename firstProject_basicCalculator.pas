@@ -10,11 +10,13 @@ type
   TForm1 = class(TForm)
     EdNumero1: TEdit;
     Label1: TLabel;
-    Edit2: TEdit;
+    EdNumero2: TEdit;
     Label2: TLabel;
     Button1: TButton;
-    Label3: TLabel;
+    lbRespuesta: TLabel;
     procedure FormCreate(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure restringirEnteros(Sender: TObject; var Key: Char);
   private
     { Private declarations }
   public
@@ -28,11 +30,31 @@ implementation
 
 {$R *.dfm}
 
+procedure TForm1.Button1Click(Sender: TObject);
+
+var
+a,b : Integer;
+c : Integer;
+begin
+  a := StrToInt(EdNumero1.Text);
+  b := StrToInt(EdNumero2.Text);
+
+  c := a + b;
+
+  lbRespuesta.Caption  := 'Suma =' + IntToStr(c);
+end;
+
 procedure TForm1.FormCreate(Sender: TObject);
 begin
 Width:=260;
 Height:=230;
 position:=poScreenCenter;
+
+end;
+
+procedure TForm1.restringirEnteros(Sender: TObject; var Key: Char);
+begin
+   if not(key in ['0'..'9',#8]) then  key := #0;
 
 end;
 

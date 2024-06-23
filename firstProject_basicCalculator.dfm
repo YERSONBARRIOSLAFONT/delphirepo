@@ -26,9 +26,9 @@ object Form1: TForm1
     Height = 21
     Caption = 'Numero 2'
   end
-  object Label3: TLabel
+  object lbRespuesta: TLabel
     Left = 111
-    Top = 172
+    Top = 151
     Width = 121
     Height = 21
     Caption = 'lbRespuesta'
@@ -41,15 +41,17 @@ object Form1: TForm1
     ImeName = 'Ed Numero 1'
     TabOrder = 0
     Text = '5'
+    OnKeyPress = restringirEnteros
   end
-  object Edit2: TEdit
+  object EdNumero2: TEdit
     Left = 111
     Top = 65
     Width = 121
     Height = 29
-    ImeName = 'Ed Numero 1'
+    ImeName = 'Ed Numero 2'
     TabOrder = 1
     Text = '5'
+    OnKeyPress = restringirEnteros
   end
   object Button1: TButton
     Left = 24
@@ -58,5 +60,6 @@ object Form1: TForm1
     Height = 33
     Caption = 'Calcular'
     TabOrder = 2
+    OnClick = Button1Click
   end
 end
